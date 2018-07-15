@@ -1,0 +1,11 @@
+@mixin generate-color-clss {
+  @each $name, $color in $colors {
+    .#{$namespace}-color-#{$name} {
+      color: $color !important;
+    }
+
+    .#{$namespace}-bg-#{$name} {
+      background-color: $color !important;
+    }
+  }
+}
