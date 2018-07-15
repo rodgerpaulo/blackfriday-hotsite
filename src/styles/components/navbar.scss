@@ -1,0 +1,11 @@
+.navbar {
+  display: flex;
+  height: 5rem;
+  align-items: center;
+  justify-content: right;
+  background-color: color('dark-grey');
+
+  @include min-screen(mq('tablet')) {
+    height: 7rem;
+  }
+}
