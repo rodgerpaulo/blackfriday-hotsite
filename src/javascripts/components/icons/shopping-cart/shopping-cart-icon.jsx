@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BaseSvg from 'javascripts/components/icons/base-svg';
 import { string } from 'prop-types';
 
-export class ShoppingCart extends Component {
+export class ShoppingCartIcon extends Component {
   render() {
     const { width, height, className, color } = this.props;
     return (
@@ -19,14 +19,14 @@ export class ShoppingCart extends Component {
   }
 }
 
-ShoppingCart.propTypes = {
+ShoppingCartIcon.propTypes = {
   className: string,
   width: string,
   height: string,
   color: string
 };
 
-ShoppingCart.defaultProps = {
+ShoppingCartIcon.defaultProps = {
   className: '',
   width: '36',
   height: '36',

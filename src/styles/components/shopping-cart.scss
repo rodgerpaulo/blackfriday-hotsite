@@ -1,0 +1,18 @@
+.shopping-cart {
+  display: flex;
+  width: 8.7rem;
+  justify-content: center;
+  position: relative;
+
+  &__badge {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: color('yellow');
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    line-height: 2.4rem;
+    text-align: center;
+    right: 0.1rem;
+  }
+}

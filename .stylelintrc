@@ -1,6 +1,6 @@
 {
   "extends": "stylelint-config-standard",
-  "ignoreFiles": "./dist/**",
+  "ignoreFiles": "./build/**",
   "plugins": [
     "stylelint-order"
   ],

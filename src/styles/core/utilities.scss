@@ -4,6 +4,16 @@
   padding: 0;
 }
 
+.content {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+
+  &--right {
+    justify-content: flex-end;
+  }
+}
+
 #jussi-react {
   height: 100%;
 }
