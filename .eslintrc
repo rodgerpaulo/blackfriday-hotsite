@@ -25,6 +25,7 @@
     "react/jsx-uses-vars": "error",
     "react/no-find-dom-node": 0,
     "react/no-children-prop": 0,
+    "react/prop-types": [2, { "ignore": ["children"] }],
     "require-jsdoc": 0,
     "quotes": 1,
     "global-require": "off",
