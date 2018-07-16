@@ -1,11 +1,17 @@
+// core items
 @import 'core/variables';
 @import 'core/functions';
 @import 'core/mixins';
 @import 'core/media-queries';
 @import 'core/reset';
 @import 'core/utilities';
-@import 'layouts/layout';
+@import 'core/typography';
+
+// pages and components
+@import 'layouts/home';
 @import 'components/navbar';
+@import 'components/button';
+@import 'components/section-title';
 @import 'components/shopping-cart';
 @import 'components/banner';
-@import 'core/typography';
+@import 'components/product';

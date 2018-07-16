@@ -1,0 +1,15 @@
+.products {
+  padding: 4.5rem 0;
+
+  &__title {
+    margin-bottom: 4rem;
+  }
+
+  &--selection {
+    background: color('lightest-grey');
+  }
+
+  .product + .product {
+    margin-top: 1rem;
+  }
+}

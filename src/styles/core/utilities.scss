@@ -6,13 +6,17 @@
 
 .content {
   width: 100%;
-  display: flex;
-  flex-flow: row;
   padding: 0 0.8rem;
 
   &--right {
+    display: flex;
+    flex-flow: row;
     justify-content: flex-end;
   }
+}
+
+.text-dashed {
+  text-decoration: line-through;
 }
 
 #jussi-react {

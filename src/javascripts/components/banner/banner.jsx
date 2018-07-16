@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PricingBadgeIcon } from 'javascripts/components/components';
+import { PercentBadgeIcon } from 'javascripts/components/components';
 
 export class Banner extends Component {
   render() {
@@ -17,7 +17,7 @@ export class Banner extends Component {
             <small className="banner__aside__small arial-sub-caps">ATÉ</small>
             <div className="banner__discount">
               <big className="banner__aside__big arial-huge">50</big>
-              <PricingBadgeIcon className="banner__discount__badge" />
+              <PercentBadgeIcon className="banner__discount__badge" />
             </div>
             <small className="banner__aside__small arial-sub-caps">
               + BARATO QUE O MERCADO

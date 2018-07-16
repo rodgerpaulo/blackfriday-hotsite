@@ -1,48 +1,81 @@
-// Typography.scss
-.sans-bold {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.6rem;
-  line-height: 2rem;
+.sans {
+  &-normal {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
+  &-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  &-big {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+
+  &-caps {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+  }
+
+  &-badge-huge {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+    line-height: 9rem;
+  }
 }
 
-.sans-badge-huge {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 4rem;
-  line-height: 9rem;
-}
+.arial {
+  &-sub {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
+  }
 
-.arial-sub {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 2.1rem;
-  line-height: 2.5rem;
-}
+  &-sub-caps {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 5rem;
+    text-transform: capitalize;
+  }
 
-.arial-sub-caps {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 5rem;
-  text-transform: capitalize;
-}
+  &-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2.5rem;
+    line-height: 3rem;
 
-.arial-large {
-  font-family: 'Arial-black', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 5.1rem;
-  line-height: 6rem;
-}
+    @include min-screen(mq('tablet')) {
+      font-size: 3.2rem;
+      line-height: 4rem;
+    }
+  }
 
-.arial-huge {
-  font-family: 'Arial-black', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 13.4rem;
-  line-height: 9rem;
+  &-large {
+    font-family: 'Arial-black', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 5.1rem;
+    line-height: 6rem;
+  }
 
-  @include min-screen(mq('tablet')) {
-    font-size: 19.4rem;
-    line-height: 20rem;
+  &-huge {
+    font-family: 'Arial-black', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13.4rem;
+    line-height: 9rem;
+
+    @include min-screen(mq('tablet')) {
+      font-size: 19.4rem;
+      line-height: 20rem;
+    }
   }
 }

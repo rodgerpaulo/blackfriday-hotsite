@@ -1,0 +1,35 @@
+.product {
+  background: color('white');
+  padding: 1.8rem;
+
+  &__image {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  &__badge {
+    position: absolute;
+    bottom: 0;
+    right: 3rem;
+  }
+
+  &__code {
+    display: block;
+    color: color('medium-grey');
+    margin-bottom: 1.4rem;
+  }
+
+  &__price-from {
+    color: color('medium-grey');
+  }
+
+  &__price-to {
+    display: block;
+  }
+
+  &__add {
+    margin-top: 2.5rem;
+    display: block;
+    width: 100%;
+  }
+}

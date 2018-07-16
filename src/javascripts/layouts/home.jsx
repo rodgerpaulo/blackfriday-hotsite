@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import { Navbar, Banner, Product } from 'javascripts/components/components';
+import {
+  Navbar,
+  Banner,
+  Product,
+  SectionTitle
+} from 'javascripts/components/components';
 
 class Layout extends Component {
   render() {
@@ -8,10 +13,34 @@ class Layout extends Component {
         <Navbar />
         <Banner />
         <section className="products products--selection">
-          <h1 className="products__title">
-            Seleção de <b className="products__highlight">Geladeiras</b>
-          </h1>
-          <Product />
+          <div className="content">
+            <SectionTitle
+              className="products__title"
+              text="Seleção de"
+              highlight="Geladeiras"
+            />
+            <div className="products-list">
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
+          </div>
+        </section>
+        <section className="products">
+          <div className="content">
+            <SectionTitle
+              className="products__title"
+              text="Os mais vendidos da categoria"
+              highlight="Geladeiras"
+            />
+            <div className="products-list">
+              <Product />
+              <Product />
+              <Product />
+              <Product />
+            </div>
+          </div>
         </section>
       </div>
     );

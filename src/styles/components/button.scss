@@ -1,0 +1,14 @@
+.btn {
+  height: 5rem;
+  background-color: color('yellow');
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: color('white');
+    border: solid 0.1rem color('yellow');
+  }
+
+  &.rounded {
+    border-radius: 0.4rem;
+  }
+}
