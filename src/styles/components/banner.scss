@@ -1,0 +1,56 @@
+.banner {
+  background: color('medium-grey');
+  padding: 3rem 0;
+  text-align: center;
+
+  @include min-screen(mq('tablet')) {
+    // padding: 3.7rem 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-flow: column;
+  }
+
+  &__title {
+    color: color('lighter-grey');
+    margin-bottom: 1.5rem;
+  }
+
+  &__subtitle {
+    color: color('lighter-grey');
+  }
+
+  &__description {
+    padding: 0 2rem;
+  }
+
+  &__badge {
+    display: none;
+  }
+
+  &__discount {
+    display: inline-block;
+    position: relative;
+
+    &__badge {
+      width: 6rem;
+      position: absolute;
+      right: -3.5rem;
+      bottom: -1.8rem;
+    }
+  }
+
+  &__aside {
+    position: relative;
+
+    &__small {
+      display: block;
+      color: color('lighter-grey');
+    }
+
+    &__big {
+      color: color('lighter-grey');
+    }
+  }
+}
