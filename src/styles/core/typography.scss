@@ -5,3 +5,44 @@
   font-size: 1.6rem;
   line-height: 2rem;
 }
+
+.sans-badge-huge {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  line-height: 9rem;
+}
+
+.arial-sub {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 2.1rem;
+  line-height: 2.5rem;
+}
+
+.arial-sub-caps {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 5rem;
+  text-transform: capitalize;
+}
+
+.arial-large {
+  font-family: 'Arial-black', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 5.1rem;
+  line-height: 6rem;
+}
+
+.arial-huge {
+  font-family: 'Arial-black', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 13.4rem;
+  line-height: 9rem;
+
+  @include min-screen(mq('tablet')) {
+    font-size: 19.4rem;
+    line-height: 20rem;
+  }
+}
