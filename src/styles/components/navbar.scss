@@ -1,11 +1,9 @@
 .navbar {
   display: flex;
-  height: 5rem;
+  height: 7rem;
   align-items: center;
   background-color: color('dark-grey');
-  padding: 0 0.8rem;
 
   @include min-screen(mq('tablet')) {
-    height: 7rem;
   }
 }

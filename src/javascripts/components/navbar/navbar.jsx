@@ -5,8 +5,9 @@ export class Navbar extends Component {
   render() {
     return (
       <div className="navbar">
-        <div className="content content--right" />
-        <ShoppingCart />
+        <div className="content content--right">
+          <ShoppingCart />
+        </div>
       </div>
     );
   }
