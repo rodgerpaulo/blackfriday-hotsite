@@ -4,5 +4,13 @@ import 'styles/app.scss';
 import App from 'javascripts/layouts/home';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('jussi-react'));
+import { Provider } from 'react-redux';
+import store from 'javascripts/stores/index';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('jussi-react')
+);
 registerServiceWorker();
