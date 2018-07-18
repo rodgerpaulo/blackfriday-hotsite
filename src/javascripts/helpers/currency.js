@@ -1,4 +1,4 @@
-export const formatCurrencyBRL = (price, showLeadingCurrency) => {
+export const formatCurrencyBRL = (price, showLeadingCurrency = true) => {
   price = Math.round(price * 100) / 100;
 
   const options = {

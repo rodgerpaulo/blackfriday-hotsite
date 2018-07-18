@@ -4,9 +4,9 @@ import * as classNames from 'classnames';
 
 export class Button extends Component {
   render() {
-    const { children, className, type, borderRounded } = this.props;
+    const { children, className, type, roundedBorder } = this.props;
     const classes = classNames('btn', 'sans-bold', className, {
-      rounded: borderRounded
+      rounded: roundedBorder
     });
     const buttonType = type || 'button';
 
@@ -23,13 +23,13 @@ export class Button extends Component {
 }
 
 Button.propTypes = {
-  borderRounded: bool,
+  roundedBorder: bool,
   className: string,
   type: string,
   onClick: func
 };
 
 Button.defaultProps = {
-  borderRounded: true,
+  roundedBorder: true,
   classNames: 'default'
 };
