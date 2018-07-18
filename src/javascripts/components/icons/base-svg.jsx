@@ -9,8 +9,8 @@ export default class BaseSvg extends Component {
       width,
       height,
       color,
-      viewBoxWidth,
-      viewBoxHeight
+      viewboxwidth,
+      viewboxheight
     } = this.props;
 
     return (
@@ -19,7 +19,7 @@ export default class BaseSvg extends Component {
         fill={color}
         width={width}
         height={height}
-        viewBox={`0 0 ${viewBoxWidth || width} ${viewBoxHeight || height}`}
+        viewBox={`0 0 ${viewboxwidth || width} ${viewboxheight || height}`}
         xmlns="http://www.w3.org/2000/svg"
         {...this.props}
       >
@@ -33,7 +33,7 @@ BaseSvg.propTypes = {
   className: string,
   width: string.isRequired,
   height: string.isRequired,
-  viewBoxWidth: string,
-  viewBoxHeight: string,
+  viewboxwidth: string,
+  viewboxheight: string,
   color: string.isRequired
 };
