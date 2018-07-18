@@ -1,32 +1,108 @@
 import React, { Component } from 'react';
 import { DiscountBadgeIcon, Button } from 'javascripts/components/components';
+import { func, object } from 'prop-types';
+import { getFirstImageUrl } from 'javascripts/helpers/product';
+import { formatCurrencyBRL } from 'javascripts/helpers/currency';
 
-export class Product extends Component {
+import { connect } from 'react-redux';
+import { addToCart, updateCartItem } from 'javascripts/actions/products';
+
+class Product extends Component {
+  constructor() {
+    super();
+
+    this.handleAddToCart = this.handleAddToCart.bind(this);
+  }
+
+  getProductImageSrc(product) {
+    return getFirstImageUrl(product);
+  }
+
+  handleAddToCart(product) {
+    const productItem = product.items[0];
+    const productId = product.id;
+    const productPrice = productItem.Price;
+    const { data } = this.props;
+    const cartProduct = data.byHash[productId];
+
+    if (cartProduct) {
+      const cartProductQuantity = cartProduct.quantity + 1;
+      this.props.updateCartItem({
+        id: productId,
+        price: productPrice + cartProduct.price,
+        quantity: cartProductQuantity
+      });
+    } else {
+      this.props.addToCart({
+        id: productId,
+        price: productPrice,
+        image: this.getProductImageSrc(product),
+        description: product.productName,
+        quantity: 1
+      });
+    }
+  }
+
   render() {
+    const { product } = this.props;
+    const productItem = product.items[0];
+    const priceInTwelve = productItem.ListPrice / 12;
+
     return (
       <div className="product">
         <div className="product__image">
           <DiscountBadgeIcon className="product__badge" />
-          <img
-            src="/product-images/product-01-imagem-1000X1000.jpg"
-            alt="Produto"
-          />
+          <img src={this.getProductImageSrc(product)} alt="Produto" />
         </div>
-        <h2 className="sans-bold product__title">
-          Geladeira Frost Free Duplex 500 litros cor Inox com Turbo Control
-        </h2>
-        <span className="sans-caps product__code">231231</span>
+        <h2 className="sans-bold product__title">{product.productName}</h2>
+        <span className="sans-caps product__code">
+          {product.productReference}
+        </span>
         <small className="sans-normal product__price-from">
-          De: <span className="text-dashed">R$ 9.999,99.</span> Por:
+          De:{' '}
+          <span className="text-dashed">
+            {formatCurrencyBRL(productItem.PriceWithoutDiscount)}.
+          </span>{' '}
+          Por:
         </small>
-        <big className="sans-big product__price-to">R$ 2.121,00</big>
+        <big className="sans-big product__price-to">
+          {formatCurrencyBRL(productItem.Price)}
+        </big>
         <div className="sans-normal product__payment-forms">
           <b>à vista no boleto bancário</b>
           <br />
-          ou até 12x de R$ 999,99
+          ou até 12x de {formatCurrencyBRL(priceInTwelve)}
         </div>
-        <Button className="product__add">Adicionar ao carrinho</Button>
+        <Button
+          onClick={() => this.handleAddToCart(product)}
+          className="product__add"
+        >
+          Adicionar ao carrinho
+        </Button>
       </div>
     );
   }
 }
+
+Product.propTypes = {
+  addToCart: func,
+  updateCartItem: func,
+  product: object,
+  data: object
+};
+
+const mapDispachToProps = dispach => {
+  return {
+    addToCart: product => dispach(addToCart(product)),
+    updateCartItem: productInfo => dispach(updateCartItem(productInfo))
+  };
+};
+
+const mapStateToProps = data => {
+  return { data };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispachToProps
+)(Product);
