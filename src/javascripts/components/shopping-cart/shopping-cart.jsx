@@ -40,6 +40,23 @@ class ShoppingCart extends Component {
     } else {
       this.props.removeCartItem(product.id);
     }
+    if (this.props.data.byId.length === 1) {
+      this.setState({
+        ...this.state,
+        cartIsOpen: false
+      });
+    }
+  }
+
+  getProductSubtotal() {
+    const { data } = this.props;
+    let total = 0;
+
+    Object.keys(data.byHash).forEach(item => {
+      total = total + data.byHash[item].price;
+    });
+
+    return total;
   }
 
   render() {
@@ -47,10 +64,12 @@ class ShoppingCart extends Component {
     const { data } = this.props;
     const itemsCount = data.byId.length || 0;
     const isBadgeVisible = itemsCount;
+    const couldShowCart = cartIsOpen && itemsCount;
     const shoppingCartClasses = classNames('shopping-cart', {
-      'shopping-cart--open': cartIsOpen
+      'shopping-cart--open': couldShowCart
     });
-    const cartIconColor = cartIsOpen ? '#303030' : '#fff';
+    const cartIconColor = couldShowCart ? '#303030' : '#fff';
+    const productSubTotal = formatCurrencyBRL(this.getProductSubtotal());
 
     const renderProducts = data.byId.map((product, index) => (
       <div
@@ -94,11 +113,23 @@ class ShoppingCart extends Component {
           )}
           <ShoppingCartIcon color={cartIconColor} />
         </div>
-        {cartIsOpen ? (
+        {couldShowCart ? (
           <div className="shopping-cart__items">
             <div className="shopping-cart__title sans-bold">Meu carrinho</div>
-            {itemsCount ? renderProducts : ''}
-            <Button roundedBorder={false}>Comprar</Button>
+            {renderProducts}
+            <div className="shopping-cart__total sans-bold">
+              <span className="shopping-cart__total__legend sans-small">
+                Subtotal (frete não incluso):
+              </span>
+              <span className="shopping-cart__total__value sans-small">
+                {productSubTotal}
+              </span>
+            </div>
+            <div className="shopping-cart__buy">
+              <Button className="shopping-cart__button" roundedBorder={false}>
+                Comprar
+              </Button>
+            </div>
           </div>
         ) : (
           ''
