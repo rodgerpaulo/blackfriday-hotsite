@@ -1,10 +1,16 @@
 import { productsUrl } from 'javascripts/constants/urls';
 import { ADD_TO_CART } from 'javascripts/constants/action-types';
 import { UPDATE_CART_ITEM } from 'javascripts/constants/action-types';
+import { REMOVE_CART_ITEM } from 'javascripts/constants/action-types';
 
 export function getProducts() {
   return fetch(productsUrl);
 }
+
+export const removeCartItem = productId => ({
+  type: REMOVE_CART_ITEM,
+  id: productId
+});
 
 export const updateCartItem = productInfo => ({
   type: UPDATE_CART_ITEM,

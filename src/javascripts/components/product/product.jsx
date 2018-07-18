@@ -26,15 +26,15 @@ class Product extends Component {
     const cartProduct = data.byHash[productId];
 
     if (cartProduct) {
-      const cartProductQuantity = cartProduct.quantity + 1;
       this.props.updateCartItem({
         id: productId,
-        price: productPrice + cartProduct.price,
-        quantity: cartProductQuantity
+        price: productPrice + cartProduct.unitPrice,
+        quantity: cartProduct.quantity + 1
       });
     } else {
       this.props.addToCart({
         id: productId,
+        unitPrice: productPrice,
         price: productPrice,
         image: this.getProductImageSrc(product),
         description: product.productName,
