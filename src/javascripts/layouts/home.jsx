@@ -1,13 +1,47 @@
 import React, { Component } from 'react';
+import { getProducts } from 'javascripts/actions/products';
 import {
   Navbar,
   Banner,
-  Product,
   SectionTitle
 } from 'javascripts/components/components';
 
+import Product from 'javascripts/components/product/product';
+
 class Layout extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      products: [],
+      featured: []
+    };
+  }
+
+  componentDidMount() {
+    getProducts()
+      .then(response => response.json())
+      .then(data => {
+        // set products state
+        this.setState({ ...this.state, products: data.products });
+
+        // also set featured items
+        const featured = this.state.products.slice(0, 4);
+        this.setState({ ...this.state, featured });
+      });
+  }
+
   render() {
+    const { products, featured } = this.state;
+
+    const renderProducts = products.length
+      ? products.map(product => <Product key={product.id} product={product} />)
+      : false;
+
+    const renderFeatured = featured.length
+      ? featured.map(product => <Product key={product.id} product={product} />)
+      : false;
+
     return (
       <div className="App">
         <Navbar />
@@ -20,10 +54,7 @@ class Layout extends Component {
               highlight="Geladeiras"
             />
             <div className="products-list">
-              <Product />
-              <Product />
-              <Product />
-              <Product />
+              {renderFeatured ? renderFeatured : ''}
             </div>
           </div>
         </section>
@@ -35,10 +66,7 @@ class Layout extends Component {
               highlight="Geladeiras"
             />
             <div className="products-list">
-              <Product />
-              <Product />
-              <Product />
-              <Product />
+              {renderProducts ? renderProducts : ''}
             </div>
           </div>
         </section>

@@ -3,6 +3,17 @@
   height: 7rem;
   align-items: center;
   background-color: color('dark-grey');
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+
+  &__content {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-end;
+    height: 100%;
+    padding-right: 0;
+  }
 
   @include min-screen(mq('tablet')) {
   }

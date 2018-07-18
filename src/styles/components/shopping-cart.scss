@@ -2,7 +2,28 @@
   display: flex;
   width: 8.7rem;
   justify-content: center;
+  align-items: center;
   position: relative;
+
+  &--open {
+    background: color('white');
+    position: relative;
+  }
+
+  &__items {
+    position: absolute;
+    z-index: 1;
+    top: 100%;
+    right: 0;
+    width: 100vw;
+    max-height: calc(100vh - 7rem);
+    overflow: auto;
+    background: color('white');
+  }
+
+  &__inner {
+    padding: 1.8rem;
+  }
 
   &__badge {
     width: 2.4rem;

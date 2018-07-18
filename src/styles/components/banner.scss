@@ -1,6 +1,6 @@
 .banner {
   background: color('medium-grey');
-  padding: 3rem 0;
+  padding: 10rem 0 3rem;
   text-align: center;
 
   @include min-screen(mq('tablet')) {

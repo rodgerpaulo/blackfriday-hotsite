@@ -20,12 +20,12 @@ export class SectionTitle extends Component {
 }
 
 SectionTitle.propTypes = {
-  text: string,
+  text: string.isRequired,
   highlight: string,
   className: string
 };
 
 SectionTitle.defaultProps = {
-  rounded: true,
-  classNames: 'default'
+  classNames: 'default',
+  highlight: ''
 };
