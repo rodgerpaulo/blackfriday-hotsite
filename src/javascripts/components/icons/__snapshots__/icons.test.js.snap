@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Icons with default state 1`] = `
+<svg
+  className=""
+  color="#505050"
+  fill="#505050"
+  height="24"
+  viewBox="0 0 24 24"
+  width="24"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g
+    fill="none"
+    fillRule="evenodd"
+    opacity=".54"
+  >
+    <g
+      fill="#505050"
+      transform="translate(-415 -99)"
+    >
+      <g
+        transform="translate(416 99)"
+      >
+        <polygon
+          points="19 6.4 17.6 5 12 10.6 6.4 5 5 6.4 10.6 12 5 17.6 6.4 19 12 13.4 17.6 19 19 17.6 13.4 12"
+        />
+      </g>
+    </g>
+  </g>
+</svg>
+`;
