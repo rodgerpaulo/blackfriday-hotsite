@@ -96,7 +96,9 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleNameMapper": {
-      "^react-native$": "react-native-web"
+      "^react-native$": "react-native-web",
+      "^javascripts/(.*)": "<rootDir>/src/javascripts/$1",
+      "^styles/(.*)": "<rootDir>/src/styles/$1"
     },
     "moduleFileExtensions": [
       "web.js",
