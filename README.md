@@ -2,7 +2,7 @@
 
 Um processo de compras criado em React para testar e Estudar!
 
-[![Build Status](https://semaphoreci.com/api/v1/rodgerpaulo/blackfriday-hotsite/branches/development/badge.svg)](https://semaphoreci.com/rodgerpaulo/blackfriday-hotsite)
+[![Build Status](https://travis-ci.com/rodgerpaulo/blackfriday-hotsite.svg)](https://travis-ci.com/rodgerpaulo/blackfriday-hotsite)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6d24c65db059eaa2cf63/maintainability)](https://codeclimate.com/github/rodgerpaulo/blackfriday-hotsite/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6d24c65db059eaa2cf63/test_coverage)](https://codeclimate.com/github/rodgerpaulo/blackfriday-hotsite/test_coverage)
 
