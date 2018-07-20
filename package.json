@@ -84,6 +84,7 @@
     "node-sass": "^4.9.2",
     "react-redux": "^5.0.7",
     "react-styleguidist": "^7.1.0",
+    "react-test-renderer": "^16.4.1",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "sass-loader": "^7.0.3",
@@ -114,7 +115,7 @@
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^javascripts$": "src/javascripts/$1",
+      "^javascripts(.*)$": "<rootDir>/src/javascripts$1",
       "^styles$": "src/styles/$1"
     },
     "moduleFileExtensions": [
