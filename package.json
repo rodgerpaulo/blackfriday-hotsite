@@ -8,7 +8,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "test:coverage": "node scripts/test.js --env=jsdom --coverage",
+    "coverage": "node scripts/test.js --env=jsdom --coverage",
     "lint-staged": "lint-staged",
     "lintcss": "stylelint --config .stylelintrc src/styles/**/*.scss",
     "lintjs": "eslint -c .eslintrc src/javascripts/**/*"

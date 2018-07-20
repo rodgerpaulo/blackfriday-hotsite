@@ -64,9 +64,9 @@ yarn test
 Para analisar o _coverage_
 
 ```sh
-npm run test:coverage
+npm run coverage
 # ou com yarn
-yarn test:coverage
+yarn coverage
 ```
 
 ## Build
