@@ -114,8 +114,8 @@
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web",
-      "^javascripts/(.*)": "<rootDir>/src/javascripts/$1",
-      "^styles/(.*)": "<rootDir>/src/styles/$1"
+      "^javascripts$": "src/javascripts/$1",
+      "^styles$": "src/styles/$1"
     },
     "moduleFileExtensions": [
       "web.js",
