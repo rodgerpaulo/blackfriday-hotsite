@@ -3,7 +3,7 @@ import { getProducts } from 'javascripts/actions/products';
 import Navbar from 'javascripts/components/navbar';
 import Banner from 'javascripts/components/banner';
 import Product from 'javascripts/components/product';
-import ProductSection from './ProductSection';
+import ProductSection from 'javascripts/layouts/product-section';
 
 class Layout extends Component {
   constructor() {

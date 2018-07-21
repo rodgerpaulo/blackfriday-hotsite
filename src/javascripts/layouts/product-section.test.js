@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductSection from './ProductSection';
+import ProductSection from './product-section';
 import renderer from 'react-test-renderer';
 
 test('Render Product Section without highlight', () => {
