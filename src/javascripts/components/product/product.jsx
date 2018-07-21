@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { DiscountBadgeIcon } from 'javascripts/components/components';
 import Button from 'javascripts/components/Button/Button';
 import { func, object } from 'prop-types';
@@ -8,7 +8,7 @@ import { formatCurrencyBRL } from 'javascripts/helpers/currency';
 import { connect } from 'react-redux';
 import { addToCart, updateCartItem } from 'javascripts/actions/products';
 
-class Product extends Component {
+class Product extends PureComponent {
   constructor() {
     super();
 

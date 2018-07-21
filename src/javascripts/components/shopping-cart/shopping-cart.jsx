@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { object, func } from 'prop-types';
 import classNames from 'classnames';
 import { formatCurrencyBRL } from 'javascripts/helpers/currency';
@@ -10,17 +10,13 @@ import { connect } from 'react-redux';
 import Button from 'javascripts/components/Button/Button';
 import { ShoppingCartIcon, CloseIcon } from 'javascripts/components/components';
 
-class ShoppingCart extends Component {
+class ShoppingCart extends PureComponent {
   constructor() {
     super();
 
     this.state = {
       cartIsOpen: false
     };
-  }
-
-  groupCartItems(cartItems) {
-    this.sta;
   }
 
   handleOpenCartClick() {

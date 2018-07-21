@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import BaseSvg from 'javascripts/components/icons/base-svg';
+import React, { PureComponent } from 'react';
+import BaseSvg from './base-svg';
 import { string } from 'prop-types';
 
-export class CloseIcon extends Component {
+export class CloseIcon extends PureComponent {
   render() {
     const { width, height, className, color } = this.props;
     return (
