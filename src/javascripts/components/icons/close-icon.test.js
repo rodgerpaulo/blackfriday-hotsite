@@ -1,5 +1,5 @@
 import React from 'react';
-import { CloseIcon } from './icons';
+import CloseIcon from './close-icon';
 import renderer from 'react-test-renderer';
 
 test('Render Icons with default state', () => {

@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import BaseSvg from './base-svg';
 import { string } from 'prop-types';
 
-export class ShoppingCartIcon extends PureComponent {
+export default class ShoppingCartIcon extends PureComponent {
   render() {
     const {
       width,

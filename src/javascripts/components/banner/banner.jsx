@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { PercentBadgeIcon } from 'javascripts/components/components';
+import PercentBadgeIcon from 'javascripts/components/icons/percent-badge-icon';
 
 export class Banner extends Component {
   render() {

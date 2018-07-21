@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { DiscountBadgeIcon } from 'javascripts/components/components';
+import DiscountBadgeIcon from 'javascripts/components/icons/discount-badge-icon';
 import Button from 'javascripts/components/Button/Button';
 import { func, object } from 'prop-types';
 import { getFirstImageUrl } from 'javascripts/helpers/product';

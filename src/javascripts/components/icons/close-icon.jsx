@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import BaseSvg from './base-svg';
 import { string } from 'prop-types';
 
-export class CloseIcon extends PureComponent {
+export default class CloseIcon extends PureComponent {
   render() {
     const { width, height, className, color } = this.props;
     return (

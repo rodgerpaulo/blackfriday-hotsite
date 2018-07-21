@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import BaseSvg from './base-svg';
 import { string } from 'prop-types';
 
-export class PercentBadgeIcon extends PureComponent {
+export default class PercentBadgeIcon extends PureComponent {
   render() {
     const { width, height, className, color } = this.props;
     return (
