@@ -56,19 +56,8 @@ class ShoppingCart extends Component {
     return total;
   }
 
-  render() {
-    const { cartIsOpen } = this.state;
-    const { data } = this.props;
-    const itemsCount = data.byId.length || 0;
-    const isBadgeVisible = itemsCount;
-    const couldShowCart = cartIsOpen && itemsCount;
-    const shoppingCartClasses = classNames('shopping-cart', {
-      'shopping-cart--open': couldShowCart
-    });
-    const cartIconColor = couldShowCart ? '#303030' : '#fff';
-    const productSubTotal = formatCurrencyBRL(this.getProductSubtotal());
-
-    const renderProducts = data.byId.map((product, index) => (
+  renderProducts(data) {
+    return data.byId.map((product, index) => (
       <div
         key={index}
         onClick={() => this.handleRemoveCartItem(data.byHash[product])}
@@ -96,6 +85,21 @@ class ShoppingCart extends Component {
         </div>
       </div>
     ));
+  }
+
+  render() {
+    const { cartIsOpen } = this.state;
+    const { data } = this.props;
+    const itemsCount = data.byId.length || 0;
+    const isBadgeVisible = itemsCount > 0;
+    const couldShowCart = cartIsOpen && itemsCount;
+    const shoppingCartClasses = classNames('shopping-cart', {
+      'shopping-cart--open': couldShowCart
+    });
+    const cartIconColor = couldShowCart ? '#303030' : '#fff';
+    const productSubTotal = formatCurrencyBRL(this.getProductSubtotal());
+
+    const renderProducts = this.renderProducts(data);
 
     return (
       <div className={shoppingCartClasses}>
@@ -103,14 +107,12 @@ class ShoppingCart extends Component {
           onClick={this.handleOpenCartClick.bind(this)}
           className="shopping-cart__inner"
         >
-          {isBadgeVisible ? (
+          {isBadgeVisible && (
             <span className="shopping-cart__badge sans-bold">{itemsCount}</span>
-          ) : (
-            ''
           )}
           <ShoppingCartIcon color={cartIconColor} />
         </div>
-        {couldShowCart ? (
+        {couldShowCart && (
           <div className="shopping-cart__items">
             <div className="shopping-cart__title sans-bold">Meu carrinho</div>
             {renderProducts}
@@ -128,8 +130,6 @@ class ShoppingCart extends Component {
               </Button>
             </div>
           </div>
-        ) : (
-          ''
         )}
       </div>
     );
