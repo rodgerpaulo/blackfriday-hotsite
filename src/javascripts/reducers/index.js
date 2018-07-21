@@ -14,7 +14,7 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TO_CART:
       return {
-        byId: [...state.byId, action.id],
+        byId: [ ...state.byId, action.id ],
         byHash: {
           ...state.byHash,
           [action.id]: action.payload
