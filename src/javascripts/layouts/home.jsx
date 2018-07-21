@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { getProducts } from 'javascripts/actions/products';
-import {
-  Navbar,
-  Banner,
-  SectionTitle
-} from 'javascripts/components/components';
+import { Navbar, Banner } from 'javascripts/components/components';
+import ProductSection from './ProductSection';
 
 import Product from 'javascripts/components/product/product';
 
@@ -34,44 +31,37 @@ class Layout extends Component {
   render() {
     const { products, featured } = this.state;
 
-    const renderProducts = products.length
-      ? products.map(product => <Product key={product.id} product={product} />)
-      : false;
+    if (products.length && featured.length) {
+      const renderProducts = products.map(product => (
+        <Product key={product.id} product={product} />
+      ));
 
-    const renderFeatured = featured.length
-      ? featured.map(product => <Product key={product.id} product={product} />)
-      : false;
+      const renderFeatured = featured.map(product => (
+        <Product key={product.id} product={product} />
+      ));
 
-    return (
-      <div className="App">
-        <Navbar />
-        <Banner />
-        <section className="products products--selection">
-          <div className="content">
-            <SectionTitle
-              className="products__title"
-              text="Seleção de"
-              highlight="Geladeiras"
-            />
-            <div className="products-list">
-              {renderFeatured ? renderFeatured : ''}
-            </div>
-          </div>
-        </section>
-        <section className="products">
-          <div className="content">
-            <SectionTitle
-              className="products__title"
-              text="Os mais vendidos da categoria"
-              highlight="Geladeiras"
-            />
-            <div className="products-list">
-              {renderProducts ? renderProducts : ''}
-            </div>
-          </div>
-        </section>
-      </div>
-    );
+      return (
+        <div className="App">
+          <Navbar />
+          <Banner />
+          <ProductSection
+            text="Seleção de"
+            highlight="Geladeiras"
+            greyBackground={true}
+          >
+            {renderFeatured}
+          </ProductSection>
+          <ProductSection
+            text="Os mais vendidos da categoria"
+            highlight="Geladeiras"
+          >
+            {renderProducts}
+          </ProductSection>
+        </div>
+      );
+    } else {
+      return <div>Loadding...</div>;
+    }
   }
 }
 
