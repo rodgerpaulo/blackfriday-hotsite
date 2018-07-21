@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Button with rounded border 1`] = `
+<button
+  className="btn sans-bold rounded"
+  onClick={undefined}
+  type="button"
+>
+  
+  click me!
+</button>
+`;
+
+exports[`Render Button with type submit 1`] = `
+<button
+  className="btn sans-bold rounded"
+  onClick={undefined}
+  type="submit"
+>
+  
+  Submit form
+</button>
+`;
+
+exports[`Render Button without rounded border 1`] = `
+<button
+  className="btn sans-bold"
+  onClick={undefined}
+  type="button"
+>
+  
+  click me!
+</button>
+`;

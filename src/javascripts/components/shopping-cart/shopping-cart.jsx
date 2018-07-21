@@ -7,11 +7,8 @@ import { removeCartItem, updateCartItem } from 'javascripts/actions/products';
 
 import { connect } from 'react-redux';
 
-import {
-  ShoppingCartIcon,
-  CloseIcon,
-  Button
-} from 'javascripts/components/components';
+import Button from 'javascripts/components/Button/Button';
+import { ShoppingCartIcon, CloseIcon } from 'javascripts/components/components';
 
 class ShoppingCart extends Component {
   constructor() {
