@@ -1,7 +1,7 @@
 import React from 'react';
 import { string, bool } from 'prop-types';
 import classNames from 'classnames';
-import { SectionTitle } from 'javascripts/components/components';
+import SectionTitle from 'javascripts/components/section-title';
 
 const ProductSection = props => {
   const { text, highlight, greyBackground, children } = props;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ShoppingCart from 'javascripts/components/shopping-cart/shopping-cart';
+import ShoppingCart from 'javascripts/components/shopping-cart';
 
-export class Navbar extends Component {
+export default class Navbar extends Component {
   render() {
     return (
       <div className="navbar">

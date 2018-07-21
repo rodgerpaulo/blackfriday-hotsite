@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { getProducts } from 'javascripts/actions/products';
-import { Navbar, Banner } from 'javascripts/components/components';
+import Navbar from 'javascripts/components/navbar';
+import Banner from 'javascripts/components/banner';
+import Product from 'javascripts/components/product';
 import ProductSection from './ProductSection';
-
-import Product from 'javascripts/components/product/product';
 
 class Layout extends Component {
   constructor() {

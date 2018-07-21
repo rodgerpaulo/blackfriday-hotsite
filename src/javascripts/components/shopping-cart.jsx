@@ -7,7 +7,7 @@ import { removeCartItem, updateCartItem } from 'javascripts/actions/products';
 
 import { connect } from 'react-redux';
 
-import Button from 'javascripts/components/Button/Button';
+import Button from 'javascripts/components/button';
 import CloseIcon from 'javascripts/components/icons/close-icon';
 import ShoppingCartIcon from 'javascripts/components/icons/shopping-cart-icon';
 

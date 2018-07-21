@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import DiscountBadgeIcon from 'javascripts/components/icons/discount-badge-icon';
-import Button from 'javascripts/components/Button/Button';
+import Button from 'javascripts/components/button';
 import { func, object } from 'prop-types';
 import { getFirstImageUrl } from 'javascripts/helpers/product';
 import { formatCurrencyBRL } from 'javascripts/helpers/currency';

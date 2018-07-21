@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { string } from 'prop-types';
 import classNames from 'classnames';
 
-export class SectionTitle extends Component {
+export default class SectionTitle extends Component {
   render() {
     const { text, highlight, className } = this.props;
     const classes = classNames('arial-title', 'section-title', className);
