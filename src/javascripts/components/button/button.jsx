@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { string, func, bool } from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
 export class Button extends Component {
   render() {

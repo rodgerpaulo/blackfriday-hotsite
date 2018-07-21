@@ -1,5 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import { CloseIcon } from './icons';
 import renderer from 'react-test-renderer';
 

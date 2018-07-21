@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 
 export class SectionTitle extends Component {
   render() {

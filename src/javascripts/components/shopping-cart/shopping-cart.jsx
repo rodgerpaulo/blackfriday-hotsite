@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { object, func } from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { formatCurrencyBRL } from 'javascripts/helpers/currency';
 
 import { removeCartItem, updateCartItem } from 'javascripts/actions/products';
