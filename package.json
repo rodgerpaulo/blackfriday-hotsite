@@ -15,10 +15,6 @@
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ],
     "src/styles/**/*.scss": [
       "stylelint --syntax=scss",
       "git add"
@@ -47,9 +43,9 @@
     "dotenv": "4.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "^4.16.0",
+    "eslint-loader": "1.9.0",
     "eslint-config-google": "^0.9.1",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-loader": "1.9.0",
     "eslint-plugin-compat": "^2.1.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-import": "2.8.0",
