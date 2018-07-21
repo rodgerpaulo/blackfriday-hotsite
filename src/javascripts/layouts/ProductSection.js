@@ -1,6 +1,6 @@
 import React from 'react';
 import { string, bool } from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { SectionTitle } from 'javascripts/components/components';
 
 const ProductSection = props => {
