@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Product Section with highlight 1`] = `
+<section
+  className="products"
+>
+  <div
+    className="content"
+  >
+    <h1
+      className="arial-title section-title products__title"
+    >
+      Most viewed
+       
+      <span
+        className="section-title__highlight"
+      >
+        Products
+      </span>
+    </h1>
+    <div
+      className="products-list"
+    />
+  </div>
+</section>
+`;
+
+exports[`Render Product Section with highlight and grey background 1`] = `
+<section
+  className="products products--selection"
+>
+  <div
+    className="content"
+  >
+    <h1
+      className="arial-title section-title products__title"
+    >
+      Most viewed
+       
+      <span
+        className="section-title__highlight"
+      >
+        Products
+      </span>
+    </h1>
+    <div
+      className="products-list"
+    />
+  </div>
+</section>
+`;
+
+exports[`Render Product Section without highlight 1`] = `
+<section
+  className="products"
+>
+  <div
+    className="content"
+  >
+    <h1
+      className="arial-title section-title products__title"
+    >
+      Products
+       
+      
+    </h1>
+    <div
+      className="products-list"
+    />
+  </div>
+</section>
+`;

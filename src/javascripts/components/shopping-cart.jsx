@@ -1,29 +1,23 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { object, func } from 'prop-types';
-import * as classNames from 'classnames';
+import classNames from 'classnames';
 import { formatCurrencyBRL } from 'javascripts/helpers/currency';
 
 import { removeCartItem, updateCartItem } from 'javascripts/actions/products';
 
 import { connect } from 'react-redux';
 
-import {
-  ShoppingCartIcon,
-  CloseIcon,
-  Button
-} from 'javascripts/components/components';
+import Button from 'javascripts/components/button';
+import CloseIcon from 'javascripts/components/icons/close-icon';
+import ShoppingCartIcon from 'javascripts/components/icons/shopping-cart-icon';
 
-class ShoppingCart extends Component {
+class ShoppingCart extends PureComponent {
   constructor() {
     super();
 
     this.state = {
       cartIsOpen: false
     };
-  }
-
-  groupCartItems(cartItems) {
-    this.sta;
   }
 
   handleOpenCartClick() {
@@ -59,19 +53,8 @@ class ShoppingCart extends Component {
     return total;
   }
 
-  render() {
-    const { cartIsOpen } = this.state;
-    const { data } = this.props;
-    const itemsCount = data.byId.length || 0;
-    const isBadgeVisible = itemsCount;
-    const couldShowCart = cartIsOpen && itemsCount;
-    const shoppingCartClasses = classNames('shopping-cart', {
-      'shopping-cart--open': couldShowCart
-    });
-    const cartIconColor = couldShowCart ? '#303030' : '#fff';
-    const productSubTotal = formatCurrencyBRL(this.getProductSubtotal());
-
-    const renderProducts = data.byId.map((product, index) => (
+  renderProducts(data) {
+    return data.byId.map((product, index) => (
       <div
         key={index}
         onClick={() => this.handleRemoveCartItem(data.byHash[product])}
@@ -99,6 +82,21 @@ class ShoppingCart extends Component {
         </div>
       </div>
     ));
+  }
+
+  render() {
+    const { cartIsOpen } = this.state;
+    const { data } = this.props;
+    const itemsCount = data.byId.length || 0;
+    const isBadgeVisible = itemsCount > 0;
+    const couldShowCart = cartIsOpen && itemsCount;
+    const shoppingCartClasses = classNames('shopping-cart', {
+      'shopping-cart--open': couldShowCart
+    });
+    const cartIconColor = couldShowCart ? '#303030' : '#fff';
+    const productSubTotal = formatCurrencyBRL(this.getProductSubtotal());
+
+    const renderProducts = this.renderProducts(data);
 
     return (
       <div className={shoppingCartClasses}>
@@ -106,14 +104,12 @@ class ShoppingCart extends Component {
           onClick={this.handleOpenCartClick.bind(this)}
           className="shopping-cart__inner"
         >
-          {isBadgeVisible ? (
+          {isBadgeVisible && (
             <span className="shopping-cart__badge sans-bold">{itemsCount}</span>
-          ) : (
-            ''
           )}
           <ShoppingCartIcon color={cartIconColor} />
         </div>
-        {couldShowCart ? (
+        {couldShowCart && (
           <div className="shopping-cart__items">
             <div className="shopping-cart__title sans-bold">Meu carrinho</div>
             {renderProducts}
@@ -131,8 +127,6 @@ class ShoppingCart extends Component {
               </Button>
             </div>
           </div>
-        ) : (
-          ''
         )}
       </div>
     );

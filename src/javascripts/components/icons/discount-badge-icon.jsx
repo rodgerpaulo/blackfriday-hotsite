@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import BaseSvg from 'javascripts/components/icons/base-svg';
 import { string } from 'prop-types';
 
-export class DiscountBadgeIcon extends Component {
+export default class DiscountBadgeIcon extends PureComponent {
   render() {
     const { width, height, className, color } = this.props;
     return (

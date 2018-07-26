@@ -1,8 +1,11 @@
-import { ADD_TO_CART } from 'javascripts/constants/action-types';
-import { UPDATE_CART_ITEM } from 'javascripts/constants/action-types';
-import { REMOVE_CART_ITEM } from 'javascripts/constants/action-types';
+import { loadState } from 'javascripts/helpers/localStorage';
+import {
+  ADD_TO_CART,
+  UPDATE_CART_ITEM,
+  REMOVE_CART_ITEM
+} from 'javascripts/constants/action-types';
 
-const initialState = {
+let initialState = loadState() || {
   byId: [],
   byHash: {}
 };

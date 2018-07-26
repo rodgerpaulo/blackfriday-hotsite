@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { DiscountBadgeIcon, Button } from 'javascripts/components/components';
+import React, { PureComponent } from 'react';
+import DiscountBadgeIcon from 'javascripts/components/icons/discount-badge-icon';
+import Button from 'javascripts/components/button';
 import { func, object } from 'prop-types';
 import { getFirstImageUrl } from 'javascripts/helpers/product';
 import { formatCurrencyBRL } from 'javascripts/helpers/currency';
@@ -7,7 +8,7 @@ import { formatCurrencyBRL } from 'javascripts/helpers/currency';
 import { connect } from 'react-redux';
 import { addToCart, updateCartItem } from 'javascripts/actions/products';
 
-class Product extends Component {
+class Product extends PureComponent {
   constructor() {
     super();
 
